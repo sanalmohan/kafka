@@ -1,6 +1,7 @@
 # Apache Kafka KRaft Cluster on Vagrant + KVM/libvirt (Manual, 3 Nodes)
 
-![kafka](https://img.shields.io/badge/Apache%20Kafka-4.0.0-black) ![scala](https://img.shields.io/badge/Scala-2.13-informational) ![mode](https://img.shields.io/badge/Mode-KRaft%20(Controller%2BBroker)-blue) ![provider](https://img.shields.io/badge/Provider-Vagrant%20%2B%20libvirt-green)
+[![kafka](https://img.shields.io/badge/Apache%20Kafka-4.0.0-black)](https://kafka.apache.org/) [![scala](https://img.shields.io/badge/Scala-2.13-informational)](https://www.scala-lang.org/) [![mode](https://img.shields.io/badge/Mode-KRaft%20(Controller%2BBroker)-blue)](https://kafka.apache.org/documentation/#kraft) [![provider](https://img.shields.io/badge/Provider-Vagrant%20%2B%20libvirt-green)](https://github.com/vagrant-libvirt/vagrant-libvirt)
+
 
 > **Goal:** Vagrant (**libvirt provider**) ব্যবহার করে ৩টি Ubuntu VM-এ **Apache Kafka 4.0.0 (KRaft mode)** ক্লাস্টার ম্যানুয়ালি সেটআপ করা।  
 > **IPs:** `192.168.56.10`, `192.168.56.11`, `192.168.56.12`  
