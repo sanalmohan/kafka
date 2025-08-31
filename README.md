@@ -21,6 +21,7 @@
 - [Troubleshooting (libvirt + Kafka)](#troubleshooting-libvirt--kafka)
 - [Ops Cheatsheet](#ops-cheatsheet)
 - [Design Rationale](#design-rationale)
+- [Cluster Failure Test](#cluster-failure-test)
 
 ---
 
@@ -479,3 +480,120 @@ sudo journalctl -u kafka -f
 - **Manual steps:** learning-first; পরে চাইলে provisioning যোগ করা যাবে।
 
 > Next: প্রড হার্ডেনিংয়ের জন্য `SSL`/`SASL` সক্ষম করুন, `JMX` metrics exporter যোগ করুন, OS tuning (`nofile`, `sysctl`) কনফিগার করুন।
+---
+
+
+## Step 9: Cluster Failure Test
+
+**Why:** verify leader election and cluster resilience when a broker goes down.
+**What:** stop one Kafka broker (VM), check cluster status, then restart it.
+**How:** use `systemctl` inside the VM or `vagrant halt` from host.
+
+---
+
+### 9.1. Stop one VM (simulate broker failure)
+
+From host machine:
+
+```bash
+vagrant halt kafka-1
+```
+
+Or inside VM:
+
+```bash
+sudo systemctl stop kafka
+```
+
+That node will drop out of the cluster.
+
+---
+
+### 9.2. Check cluster metadata
+
+From another healthy broker:
+
+```bash
+/opt/kafka/bin/kafka-metadata-quorum.sh --bootstrap-server kafka-2:9092 describe --status
+```
+
+**Output shows:**
+
+* `ClusterId` (unchanged)
+* `CurrentVoters` (remaining brokers)
+* `LeaderId` (controller leader after re-election)
+
+Example:
+
+```
+ClusterId: gd2xrYtZSMyebJWp8r9XqQ
+LeaderId: 2
+LeaderEpoch: 5
+CurrentVoters: [1, 2, 3]
+```
+
+---
+
+### 9.3. Check topic leadership
+
+```bash
+/opt/kafka/bin/kafka-topics.sh --describe --topic test-topic --bootstrap-server kafka-2:9092
+```
+
+Example:
+
+```
+Partition: 0 Leader: 2 Replicas: 1,2,3 Isr: 2,3
+```
+
+This means broker 2 became leader for partition 0, and ISR shrunk to the live brokers.
+
+---
+
+### 9.4. Restart the node
+
+Bring the broker back:
+
+```bash
+vagrant up kafka-1
+# or
+sudo systemctl start kafka
+```
+
+Verify service status:
+
+```bash
+sudo systemctl status kafka
+```
+
+You should see it active again:
+
+```
+● kafka.service - Apache Kafka (KRaft)
+     Active: active (running) since ...
+   Main PID: 8797 (java)
+```
+
+---
+
+### 9.5. Observe new leader election
+
+Run again:
+
+```bash
+/opt/kafka/bin/kafka-metadata-quorum.sh --bootstrap-server kafka-2:9092 describe --status
+```
+
+You’ll notice `LeaderId` shifting between brokers (`1`, `2`, `3`) as controllers re-elect when nodes leave/join.
+
+---
+
+### Notes
+
+* Losing **one broker** in a 3-node cluster is fine (quorum = 2).
+* Losing **two brokers** → quorum lost, cluster cannot make progress.
+* Log messages like `Ignored unloading metadata for __consumer_offsets-...` are normal during restarts.
+
+---
+
+Want me to regenerate your **full README file** (with this Step 9: Test section merged in) so you can download it like before?
