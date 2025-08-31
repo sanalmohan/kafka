@@ -1,0 +1,10 @@
+<network>
+  <name>kafka-net</name>
+  <forward mode='nat'/>
+  <bridge name='virbr56' stp='on' delay='0'/>
+  <ip address='192.168.56.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='192.168.56.100' end='192.168.56.200'/>
+    </dhcp>
+  </ip>
+</network>
