@@ -171,8 +171,8 @@ flowchart LR
 
 ### Run
 ```bash
-# ফাইলগুলো repo থেকে নিন: docker-compose.yml, .env, ops/kafka-init.sh
-mkdir -p ops && chmod +x ops/kafka-init.sh
+# ফাইলগুলো repo থেকে নিন: docker-compose.yml, .env, kafka-init.sh
+chmod +x kafka-init.sh
 docker compose up -d
 docker compose ps
 # UI: http://localhost:8080
