@@ -177,6 +177,8 @@ vagrant status
 Login:
 ```bash
 vagrant ssh kafka-1
+vagrant ssh kafka-2
+vagrant ssh kafka-3
 ```
 
 ---
