@@ -590,9 +590,6 @@ kafka1:
 
 ---
 
-## License
-MIT (example).
-
 ## Maintainer
 **Md Jakir Hosen**  
 Email: <jakirhosen9395@gmail.com>  
