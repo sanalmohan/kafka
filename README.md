@@ -496,7 +496,7 @@ KAFKA_AUTO_CREATE_TOPICS_ENABLE=false
 ```
 </details>
 
-<details><summary><code>ops/kafka-init.sh</code></summary>
+<details><summary><code>kafka-init.sh</code></summary>
 
 ```bash
 #!/usr/bin/env bash
